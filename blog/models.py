@@ -7,3 +7,7 @@ class Article(models.Model):
     summary = models.CharField(max_length=255)
     category = models.CharField(max_length=255)
     pubdate = models.DateTimeField()
+    slug = models.SlugField(max_length=255, unique=True)
+
+    def __str__(self) -> str:
+        return self.title
